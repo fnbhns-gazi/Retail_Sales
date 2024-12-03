@@ -1,0 +1,102 @@
+Store_ID,Store_Name,Location,Store_Type,Opening_Date,Manager_Name,Store_Size,Number_of_Employees,Annual_Sales
+104,Store 104,San Diego,Franchise,4/10/2020,Victor Flynn,Large,35,147384.92
+183,Store 183,Austin,Outlet,5/11/2020,Kevin Wong,Medium,29,154770.94
+198,Store 198,Philadelphia,Online,12/26/2023,Dr. Joshua Garcia Jr.,Large,34,156874.71
+175,Store 175,Chicago,Online,7/1/2020,Mrs. Brenda Cole,Medium,23,165029.28
+128,Store 128,Dallas,Flagship,11/3/2020,Nicole Brown,Small,13,139019.3
+196,Store 196,San Antonio,Outlet,11/14/2020,John Jones,Large,18,146469.46
+169,Store 169,Philadelphia,Outlet,6/11/2023,Mrs. Brenda Cole,Small,35,164248.48
+172,Store 172,Philadelphia,Franchise,11/16/2022,Dr. Joshua Garcia Jr.,Medium,8,159468.35
+185,Store 185,San Diego,Franchise,11/6/2024,Jennifer Ward,Small,12,152475.3
+148,Store 148,Phoenix,Franchise,3/13/2021,Mrs. Brenda Cole,Medium,42,141929.34
+108,Store 108,Philadelphia,Outlet,7/17/2024,Kevin Wong,Small,49,158620.06
+103,Store 103,Phoenix,Outlet,3/14/2024,Mrs. Brenda Cole,Large,44,153909.11
+164,Store 164,Chicago,Flagship,4/5/2021,Kevin Wong,Medium,9,153171.12
+142,Store 142,Chicago,Flagship,1/8/2024,Victor Flynn,Small,28,153945.63
+194,Store 194,Houston,Franchise,3/20/2021,Jennifer Ward,Small,49,147425.22
+131,Store 131,Houston,Flagship,3/6/2020,Anthony Delgado,Medium,44,149539.01
+188,Store 188,New York,Flagship,9/13/2024,Paula Garrett,Large,13,144278.26
+162,Store 162,Chicago,Outlet,3/24/2023,John Jones,Large,37,163632.26
+111,Store 111,Chicago,Outlet,3/3/2024,Paula Garrett,Medium,25,140555.07
+150,Store 150,New York,Online,4/18/2020,Paula Garrett,Small,42,141750.31
+153,Store 153,Austin,Online,1/4/2020,Nicole Brown,Large,28,149932.91
+101,Store 101,Houston,Franchise,4/18/2020,Dr. Joshua Garcia Jr.,Medium,25,150056.6
+182,Store 182,Los Angeles,Franchise,10/28/2021,Dr. Joshua Garcia Jr.,Small,43,147888.6
+134,Store 134,San Antonio,Online,1/18/2021,Jacob Greene,Large,14,146855.47
+155,Store 155,Austin,Outlet,5/4/2021,Dr. Joshua Garcia Jr.,Medium,19,140022.91
+154,Store 154,San Diego,Online,7/24/2022,Anthony Delgado,Medium,25,141078.45
+119,Store 119,Philadelphia,Flagship,2/14/2024,Jennifer Ward,Medium,49,136615.73
+171,Store 171,Phoenix,Flagship,4/15/2021,John Jones,Small,33,144380.45
+116,Store 116,Chicago,Franchise,11/9/2021,Kevin Wong,Large,23,149260.62
+178,Store 178,Phoenix,Flagship,6/9/2022,Dr. Joshua Garcia Jr.,Large,13,157052.07
+127,Store 127,New York,Franchise,1/4/2021,Mrs. Brenda Cole,Medium,39,146745.94
+149,Store 149,New York,Outlet,1/24/2020,Jacob Greene,Small,6,163307.91
+179,Store 179,San Diego,Outlet,4/7/2021,Dr. Joshua Garcia Jr.,Small,32,153909.73
+140,Store 140,Chicago,Online,1/18/2023,Mrs. Brenda Cole,Small,15,161268.5
+126,Store 126,Dallas,Online,7/31/2024,John Jones,Small,50,155861.7
+192,Store 192,San Diego,Outlet,3/19/2024,Kevin Wong,Medium,9,151932.14
+138,Store 138,San Diego,Online,1/21/2020,Dr. Joshua Garcia Jr.,Large,20,128690.92
+165,Store 165,San Diego,Franchise,1/31/2021,Victor Flynn,Small,19,144697.35
+174,Store 174,Houston,Outlet,6/13/2023,John Jones,Medium,14,144742
+129,Store 129,San Antonio,Outlet,9/2/2023,Mrs. Brenda Cole,Small,20,137216.12
+118,Store 118,Austin,Franchise,10/9/2024,Victor Flynn,Medium,30,167026.8
+180,Store 180,Houston,Flagship,3/22/2024,Dr. Joshua Garcia Jr.,Medium,10,173897.84
+193,Store 193,Phoenix,Franchise,1/26/2024,Paula Garrett,Large,24,157046.06
+136,Store 136,San Diego,Franchise,5/30/2024,Anthony Delgado,Medium,18,127845.18
+158,Store 158,New York,Franchise,1/31/2021,Dr. Joshua Garcia Jr.,Large,24,143135.53
+189,Store 189,New York,Franchise,6/10/2020,Paula Garrett,Small,7,147512.09
+107,Store 107,Phoenix,Outlet,12/17/2022,Kevin Wong,Large,35,143483.84
+124,Store 124,Chicago,Flagship,6/5/2022,Victor Flynn,Medium,11,155921.21
+159,Store 159,Chicago,Outlet,2/24/2021,Nicole Brown,Large,39,136975.57
+109,Store 109,Los Angeles,Flagship,9/18/2023,Anthony Delgado,Large,48,141943.64
+157,Store 157,Austin,Online,11/13/2023,Jennifer Ward,Small,28,145969.17
+166,Store 166,Austin,Franchise,6/22/2024,Kevin Wong,Medium,30,138638.13
+200,Store 200,Chicago,Flagship,8/3/2023,Jacob Greene,Medium,14,135966.92
+195,Store 195,San Antonio,Franchise,10/12/2023,John Jones,Medium,44,153443.71
+161,Store 161,Austin,Outlet,4/19/2023,John Jones,Medium,6,157964.92
+190,Store 190,Chicago,Outlet,5/1/2020,Jacob Greene,Medium,13,142593.63
+112,Store 112,Houston,Online,1/17/2022,Anthony Delgado,Medium,13,154314.38
+132,Store 132,San Diego,Online,5/28/2023,Paula Garrett,Medium,36,131758.3
+143,Store 143,Houston,Flagship,8/16/2023,John Jones,Large,40,138686.59
+110,Store 110,Austin,Outlet,1/14/2020,Jennifer Ward,Small,6,150225.09
+141,Store 141,Houston,Flagship,8/6/2022,Paula Garrett,Medium,6,141316.37
+167,Store 167,Philadelphia,Outlet,2/21/2021,Jacob Greene,Medium,11,152980.82
+114,Store 114,Dallas,Franchise,11/27/2021,Victor Flynn,Medium,34,153081.64
+163,Store 163,Los Angeles,Flagship,8/2/2024,John Jones,Large,35,147172.15
+146,Store 146,Austin,Flagship,6/29/2021,Nicole Brown,Medium,35,144542.46
+156,Store 156,Dallas,Online,11/13/2023,Kevin Wong,Medium,25,135558.22
+117,Store 117,Phoenix,Online,5/1/2022,Victor Flynn,Small,37,127760.61
+170,Store 170,Philadelphia,Online,5/6/2021,Dr. Joshua Garcia Jr.,Medium,43,150890.71
+152,Store 152,Phoenix,Flagship,4/19/2024,Victor Flynn,Small,32,133228.59
+139,Store 139,Los Angeles,Outlet,4/1/2024,Mrs. Brenda Cole,Large,45,151804.7
+122,Store 122,Dallas,Outlet,5/9/2022,Paula Garrett,Large,10,145547.83
+120,Store 120,Austin,Flagship,3/5/2021,Victor Flynn,Large,12,158105.28
+106,Store 106,San Antonio,Outlet,1/2/2022,Jacob Greene,Medium,28,153398.07
+123,Store 123,Austin,Outlet,6/5/2022,John Jones,Medium,31,157578.55
+191,Store 191,Dallas,Flagship,10/26/2020,Jacob Greene,Small,9,143656.88
+187,Store 187,San Antonio,Franchise,8/24/2024,Paula Garrett,Medium,23,153566.08
+176,Store 176,Houston,Franchise,4/18/2021,Jennifer Ward,Small,40,156922.39
+181,Store 181,Phoenix,Online,11/5/2021,Dr. Joshua Garcia Jr.,Medium,22,155506.37
+125,Store 125,San Antonio,Outlet,9/24/2020,Jacob Greene,Large,9,147615.69
+144,Store 144,Los Angeles,Franchise,11/25/2020,Mrs. Brenda Cole,Large,25,147081.03
+184,Store 184,Houston,Outlet,2/7/2023,Paula Garrett,Small,30,161562.23
+197,Store 197,Phoenix,Outlet,6/5/2022,Victor Flynn,Large,48,137966.21
+113,Store 113,Houston,Franchise,1/10/2020,Jennifer Ward,Small,24,130516.56
+145,Store 145,San Antonio,Online,4/6/2021,Jennifer Ward,Large,30,141505.75
+186,Store 186,Dallas,Online,12/22/2020,Nicole Brown,Large,34,134593.88
+177,Store 177,Los Angeles,Franchise,5/18/2024,Nicole Brown,Small,13,156580.99
+100,Store 100,Philadelphia,Flagship,5/26/2023,Jacob Greene,Medium,43,152681.88
+115,Store 115,Dallas,Flagship,1/8/2024,Mrs. Brenda Cole,Large,14,156654.14
+151,Store 151,Dallas,Flagship,2/23/2024,Nicole Brown,Large,41,139359.76
+173,Store 173,San Antonio,Franchise,5/28/2020,Nicole Brown,Medium,12,147484.69
+147,Store 147,Phoenix,Franchise,4/6/2021,Victor Flynn,Large,22,154343.91
+130,Store 130,Chicago,Outlet,1/7/2024,Nicole Brown,Large,38,162258.23
+133,Store 133,Houston,Flagship,8/15/2023,Dr. Joshua Garcia Jr.,Medium,35,150870.14
+135,Store 135,Los Angeles,Online,7/8/2021,Victor Flynn,Medium,20,160410.05
+102,Store 102,Philadelphia,Franchise,5/23/2021,Mrs. Brenda Cole,Medium,27,157992.79
+137,Store 137,Austin,Online,11/1/2022,Dr. Joshua Garcia Jr.,Small,5,151177.23
+168,Store 168,San Antonio,Franchise,2/26/2024,Jacob Greene,Large,44,141683.98
+121,Store 121,San Diego,Online,1/2/2021,Victor Flynn,Medium,29,154738.44
+105,Store 105,Philadelphia,Online,5/20/2024,Victor Flynn,Medium,49,144158.4
+160,Store 160,New York,Online,12/13/2020,Anthony Delgado,Small,28,153685.4
+199,Store 199,Dallas,Flagship,12/23/2022,Nicole Brown,Medium,6,165196.91
