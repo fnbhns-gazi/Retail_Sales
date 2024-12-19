@@ -1,0 +1,104 @@
+table dim_returns
+	lineageTag: a1505fd1-a795-4759-a5aa-3035347158f4
+
+	column Original_Transaction_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 064a0ff0-d87b-42a8-bd95-c7b1ef3273e2
+		summarizeBy: count
+		sourceColumn: Original_Transaction_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Return_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: afd3f4c1-0e22-4d15-aa35-101329bc27a6
+		summarizeBy: none
+		sourceColumn: Return_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: eebf52ab-a72b-430d-8d4a-2fdc63f2b8f0
+		summarizeBy: count
+		sourceColumn: Store_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 10002831-dd6b-43b1-95cb-9c7cd98c3609
+		summarizeBy: count
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Return_Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: f7042be1-cbeb-46f8-8455-5b3243f70c1d
+		summarizeBy: sum
+		sourceColumn: Return_Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Return_Amount
+		dataType: double
+		lineageTag: 5276447f-ef0a-4251-920e-cf4b81ce8a56
+		summarizeBy: sum
+		sourceColumn: Return_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Return_Reason
+		dataType: string
+		lineageTag: c1a043e7-b1f0-4933-aea4-b639282496d1
+		summarizeBy: none
+		sourceColumn: Return_Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Method
+		dataType: string
+		lineageTag: 17ed25b4-a854-4399-9fc3-3baeb20753ce
+		summarizeBy: none
+		sourceColumn: Payment_Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b86c4f2-a8ed-4e6f-af78-a8ac37940073
+		summarizeBy: count
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salesperson_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e3b1614b-2535-4105-8528-74bebea8bd7a
+		summarizeBy: count
+		sourceColumn: Salesperson_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_returns = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Data-Set\HP_Sales\returns_data.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Original_Transaction_ID", Int64.Type}, {"Return_Date", type datetime}, {"Store_ID", Int64.Type}, {"Product_ID", Int64.Type}, {"Return_Quantity", Int64.Type}, {"Return_Amount", type number}, {"Return_Reason", type text}, {"Payment_Method", type text}, {"Customer_ID", Int64.Type}, {"Salesperson_ID", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

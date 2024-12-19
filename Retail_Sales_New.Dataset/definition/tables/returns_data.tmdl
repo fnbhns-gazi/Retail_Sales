@@ -1,0 +1,120 @@
+table returns_data
+	lineageTag: 9eb67caf-2ad5-46ff-939c-511419cc27f2
+
+	column Transaction_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d7b9380-be0e-4801-abef-e27e805325d8
+		summarizeBy: none
+		sourceColumn: Transaction_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store_ID
+		dataType: string
+		lineageTag: 0881a7c6-7c3a-4c6f-8da8-be0fda16943d
+		summarizeBy: none
+		sourceColumn: Store_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_ID
+		dataType: string
+		lineageTag: 9296f43b-7f98-475d-970c-8cb0b3b6f0b9
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Return_Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: a633106c-5a32-4419-8a82-f7866ba92438
+		summarizeBy: sum
+		sourceColumn: Return_Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Return_Amount
+		dataType: double
+		lineageTag: e0758734-d0f2-464f-8c0a-ef52265c682b
+		summarizeBy: sum
+		sourceColumn: Return_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Return_Reason
+		dataType: string
+		lineageTag: bde2a1f2-1dbb-4e07-bec6-7853aa74c78b
+		summarizeBy: none
+		sourceColumn: Return_Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Method
+		dataType: string
+		lineageTag: 64109b67-5fc0-49f0-99b9-7ef64f00c2ed
+		summarizeBy: none
+		sourceColumn: Payment_Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_ID
+		dataType: string
+		lineageTag: 990d2527-51fa-4143-abe0-85fe1b2318ac
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salesperson_ID
+		dataType: string
+		lineageTag: db4ce105-cef7-4981-bd89-478fc8ac027e
+		summarizeBy: none
+		sourceColumn: Salesperson_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Return_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 29cd6300-e19f-4862-891c-386f652d5398
+		summarizeBy: none
+		sourceColumn: Return_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Return_Date_Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 6dc56018-d90a-4e14-b596-5b03eee81602
+		summarizeBy: none
+		sourceColumn: Return_Date_Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition returns_data = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Data-Set\HP_Sales\returns_data.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Original_Transaction_ID", Int64.Type}, {"Return_Date", type datetime}, {"Store_ID", Int64.Type}, {"Product_ID", Int64.Type}, {"Return_Quantity", Int64.Type}, {"Return_Amount", type number}, {"Return_Reason", type text}, {"Payment_Method", type text}, {"Customer_ID", Int64.Type}, {"Salesperson_ID", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Original_Transaction_ID", "Transaction_ID"}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(Table.TransformColumnTypes(#"Renamed Columns", {{"Return_Date", type text}}, "en-US"), "Return_Date", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Return_Date.1", "Return_Date.2"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Return_Date.1", type date}, {"Return_Date.2", type time}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"Return_Date.1", "Return_Date"}, {"Return_Date.2", "Return_Date_Time"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns1",{{"Store_ID", type text}, {"Product_ID", type text}, {"Customer_ID", type text}, {"Salesperson_ID", type text}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

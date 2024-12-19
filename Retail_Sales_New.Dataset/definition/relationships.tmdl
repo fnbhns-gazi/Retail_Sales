@@ -1,0 +1,16 @@
+relationship d5caa221-3922-48a3-9a50-a881c7242dc5
+	fromColumn: retail_sales_new.Transaction_ID
+	toColumn: Return_Customer.Transaction_ID
+
+relationship 7b6b6d06-dd19-4a77-a729-c779f0daeb96
+	fromColumn: returns_data.Transaction_ID
+	toColumn: Return_Customer.Transaction_ID
+
+relationship d7bf0082-a152-4e43-8230-35ccec119a60
+	fromColumn: retail_sales_new.Date
+	toColumn: Calendar.Date
+
+relationship 25a21bd0-c109-494d-af66-c83510a6d56c
+	fromColumn: returns_data.Return_Date
+	toColumn: Calendar.Date
+

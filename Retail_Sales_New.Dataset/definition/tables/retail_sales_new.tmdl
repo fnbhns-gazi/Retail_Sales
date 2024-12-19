@@ -1,0 +1,150 @@
+table retail_sales_new
+	lineageTag: f4108ab0-b58e-4556-a6db-f8b2bee7361d
+
+	column Transaction_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e284327-60e3-4c04-bd21-8e108ad9068b
+		summarizeBy: none
+		sourceColumn: Transaction_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store_ID
+		dataType: string
+		lineageTag: 7d10efde-e23f-4856-81d4-872506096bab
+		summarizeBy: none
+		sourceColumn: Store_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_ID
+		dataType: string
+		lineageTag: 04e5afc0-07c0-4198-8062-dbf01a99f2c7
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 97cdf2b8-aa21-4f23-8dd0-9d0870f6ef9f
+		summarizeBy: count
+		sourceColumn: Category_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity_Sold
+		dataType: int64
+		formatString: 0
+		lineageTag: d1be1359-9886-4a10-90bd-2a75c52a3f96
+		summarizeBy: sum
+		sourceColumn: Quantity_Sold
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sale_Price_Per_Unit
+		dataType: double
+		lineageTag: 837ced65-9934-4b6c-ac18-d6f813e6351d
+		summarizeBy: sum
+		sourceColumn: Sale_Price_Per_Unit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Total_Sale_Amount
+		dataType: double
+		lineageTag: 8e304dfe-fb74-427b-956b-fa8533159760
+		summarizeBy: sum
+		sourceColumn: Total_Sale_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Discount_Amount
+		dataType: double
+		lineageTag: 62993479-8920-4d18-9679-8a9820b3d56b
+		summarizeBy: sum
+		sourceColumn: Discount_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_Sale_Amount
+		dataType: double
+		lineageTag: 30529e74-4b53-4ddd-8623-d2ec6296f5fe
+		summarizeBy: sum
+		sourceColumn: Net_Sale_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Payment_Method
+		dataType: string
+		lineageTag: d953a282-2d67-4550-b0cb-d2e3532d1017
+		summarizeBy: none
+		sourceColumn: Payment_Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_ID
+		dataType: string
+		lineageTag: d85960cc-9ff2-4de8-8485-65932982c4eb
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salesperson_ID
+		dataType: string
+		lineageTag: e43ba7a8-c0b4-41ff-a4f9-d62a4120b70f
+		summarizeBy: none
+		sourceColumn: Salesperson_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dce12c3b-6566-48e6-828e-6bcce075ce0d
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Date-Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 876824d1-8b3f-4b43-8912-80a3420d7e9b
+		summarizeBy: none
+		sourceColumn: Date-Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition retail_sales_new = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Data-Set\HP_Sales\retail_sales_new.csv"),[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Transaction_ID", Int64.Type}, {"Date", type datetime}, {"Store_ID", Int64.Type}, {"Product_ID", Int64.Type}, {"Category_ID", Int64.Type}, {"Quantity_Sold", Int64.Type}, {"Sale_Price_Per_Unit", type number}, {"Total_Sale_Amount", type number}, {"Discount_Amount", type number}, {"Net_Sale_Amount", type number}, {"Payment_Method", type text}, {"Customer_ID", Int64.Type}, {"Salesperson_ID", Int64.Type}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(Table.TransformColumnTypes(#"Changed Type", {{"Date", type text}}, "en-US"), "Date", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Date.1", "Date.2"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Date.1", type date}, {"Date.2", type time}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Date.1", "Date"}, {"Date.2", "Date-Time"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns",{{"Store_ID", type text}, {"Product_ID", type text}, {"Customer_ID", type text}, {"Salesperson_ID", type text}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

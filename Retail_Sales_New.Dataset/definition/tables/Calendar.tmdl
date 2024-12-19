@@ -1,0 +1,137 @@
+table Calendar
+	lineageTag: 9c62c5bf-f8e0-45d8-9515-f320e11ad0fb
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: e98322e4-a564-47a6-badc-22434d47a19e
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: e31d850b-15eb-4a62-b1d2-5eecd254840a
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Calendar_Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 81626e35-6de2-4c31-ba15-abf1e9ab4082
+		summarizeBy: sum
+		sourceColumn: Calendar_Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Name
+		dataType: string
+		lineageTag: 64c385ad-afd9-4e17-8f15-5d5b555d3d82
+		summarizeBy: none
+		sourceColumn: Month_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: ab8350bd-fee9-46d7-871f-c39c33c5d81e
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start_of_Month
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 63ef2b15-9a63-4710-94a5-8b1253e09472
+		summarizeBy: none
+		sourceColumn: Start_of_Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Week_of_Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 8a0df18e-dba5-4f86-ad07-dd6d53b0ad88
+		summarizeBy: sum
+		sourceColumn: Week_of_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day_Name
+		dataType: string
+		lineageTag: 1eafc4a1-9239-4121-836d-59655e81bbec
+		summarizeBy: none
+		sourceColumn: Day_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 20867866-acc9-4e48-88d6-3b7d3db8334d
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day_of_Week
+		dataType: int64
+		formatString: 0
+		lineageTag: b795f8fe-4170-493f-9300-91654b875d78
+		summarizeBy: sum
+		sourceColumn: Day_of_Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day_Type
+		dataType: string
+		lineageTag: c0652dcc-b717-4a48-9f89-4c5012932e50
+		summarizeBy: none
+		sourceColumn: Day_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Yr
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e5d58277-f72c-42e4-bdaf-9d528059c0d2
+		summarizeBy: none
+		sourceColumn: Month_Yr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Month_Year_Order
+		dataType: int64
+		formatString: 0
+		lineageTag: a9c66b3e-59ad-449e-8b9d-85310dc3fbb8
+		summarizeBy: sum
+		sourceColumn: Month_Year_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Hp\Desktop\Calendar.csv"),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Year", Int64.Type}, {"Calendar_Quarter", Int64.Type}, {"Month_Name", type text}, {"Month", Int64.Type}, {"Start_of_Month", type date}, {"Week_of_Year", Int64.Type}, {"Day_Name", type text}, {"Day", Int64.Type}, {"Day_of_Week", Int64.Type}, {"Day_Type", type text}, {"Month_Yr", type date}, {"Month_Year_Order", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

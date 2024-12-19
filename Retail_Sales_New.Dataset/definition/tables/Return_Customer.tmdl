@@ -1,0 +1,26 @@
+table Return_Customer
+	lineageTag: 71769a42-18a0-4e98-a9b9-45201ac0e74f
+
+	column Transaction_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e67c97c6-2bba-4cb2-a4ec-71f7087c823e
+		summarizeBy: none
+		sourceColumn: Transaction_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Return_Customer = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({returns_data, retail_sales_new}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Transaction_ID"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["retail_sales_new","returns_data","Calendar","Return_Customer","dim_returns","cus_return2"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.126.1261.0 (24.02)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table retail_sales_new
+ref table returns_data
+ref table Calendar
+ref table Return_Customer
+ref table dim_returns
+ref table cus_return2
+

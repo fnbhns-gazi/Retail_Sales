@@ -1,0 +1,113 @@
+{
+  "config": "{\"version\":\"5.51\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU02\",\"version\":\"5.51\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "1-Banner8787428159742836.png",
+            "path": "1-Banner8787428159742836.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU02",
+            "path": "BaseThemes/CY24SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"background\":[{\"properties\":{\"image\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'1-Banner.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"1-Banner8787428159742836.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}]}}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"418b923b0496b95ed976\",\"layouts\":[{\"id\":0,\"position\":{\"x\":89.0238611713666,\"y\":168.6767895878525,\"z\":2000,\"width\":604.4251626898048,\"height\":309.2407809110629,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.Start_of_Month\"},{\"queryRef\":\"retail_sales_new.Store_ID\"},{\"queryRef\":\"Sum(retail_sales_new.Net_Sale_Amount)\"},{\"queryRef\":\"Sum(returns_data.Return_Amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"retail_sales_new\",\"Type\":0},{\"Name\":\"r1\",\"Entity\":\"returns_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Start_of_Month\"},\"Name\":\"Calendar.Start_of_Month\",\"NativeReferenceName\":\"Start_of_Month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Store_ID\"},\"Name\":\"retail_sales_new.Store_ID\",\"NativeReferenceName\":\"Store_ID\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Net_Sale_Amount\"}},\"Function\":0},\"Name\":\"Sum(retail_sales_new.Net_Sale_Amount)\",\"NativeReferenceName\":\"Sum of Net_Sale_Amount\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r1\"}},\"Property\":\"Return_Amount\"}},\"Function\":0},\"Name\":\"Sum(returns_data.Return_Amount)\",\"NativeReferenceName\":\"Sum of Return_Amount\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Store_ID\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"6D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 309.24,
+          "width": 604.43,
+          "x": 89.02,
+          "y": 168.68,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"6af62462c38555a08b58\",\"layouts\":[{\"id\":0,\"position\":{\"x\":704.3817787418656,\"y\":168.6767895878525,\"z\":1000,\"width\":565.3796095444686,\"height\":240.52060737527117,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.Start_of_Month\"},{\"queryRef\":\"Sum(retail_sales_new.Net_Sale_Amount)\"},{\"queryRef\":\"Sum(returns_data.Return_Amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"retail_sales_new\",\"Type\":0},{\"Name\":\"r1\",\"Entity\":\"returns_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Start_of_Month\"},\"Name\":\"Calendar.Start_of_Month\",\"NativeReferenceName\":\"Start_of_Month\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Net_Sale_Amount\"}},\"Function\":0},\"Name\":\"Sum(retail_sales_new.Net_Sale_Amount)\",\"NativeReferenceName\":\"Sum of Net_Sale_Amount\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r1\"}},\"Property\":\"Return_Amount\"}},\"Function\":0},\"Name\":\"Sum(returns_data.Return_Amount)\",\"NativeReferenceName\":\"Sum of Return_Amount\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"6D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 240.52,
+          "width": 565.38,
+          "x": 704.38,
+          "y": 168.68,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"b27ca972e6738ea4288e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":705.943600867679,\"y\":421.69197396963125,\"z\":3000,\"width\":563.8177874186551,\"height\":279.5661605206074,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"returns_data.Store_ID\",\"active\":true},{\"queryRef\":\"returns_data.Product_ID\"}],\"Columns\":[{\"queryRef\":\"Calendar.Start_of_Month\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(returns_data.Return_Amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"returns_data\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Store_ID\"},\"Name\":\"returns_data.Store_ID\",\"NativeReferenceName\":\"Store_ID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Start_of_Month\"},\"Name\":\"Calendar.Start_of_Month\",\"NativeReferenceName\":\"Start_of_Month\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Return_Amount\"}},\"Function\":0},\"Name\":\"Sum(returns_data.Return_Amount)\",\"NativeReferenceName\":\"Sum of Return_Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Product_ID\"},\"Name\":\"returns_data.Product_ID\",\"NativeReferenceName\":\"Product_ID\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Store_ID\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 279.57,
+          "width": 563.82,
+          "x": 705.94,
+          "y": 421.69,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e196a9d6ac550ce4212e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":89.0238611713666,\"y\":168.6767895878525,\"z\":0,\"width\":301.4316702819957,\"height\":309.2407809110629,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"retail_sales_new.Transaction_ID\"},{\"queryRef\":\"Sum(returns_data.Return_Amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"retail_sales_new\",\"Type\":0},{\"Name\":\"r1\",\"Entity\":\"returns_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Transaction_ID\"},\"Name\":\"retail_sales_new.Transaction_ID\",\"NativeReferenceName\":\"Transaction_ID\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r1\"}},\"Property\":\"Return_Amount\"}},\"Function\":0},\"Name\":\"Sum(returns_data.Return_Amount)\",\"NativeReferenceName\":\"Sum of Return_Amount\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 309.24,
+          "width": 301.43,
+          "x": 89.02,
+          "y": 168.68,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectione182c089470984e0a01e",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"28c6ad468aceaed248ec\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.536423841059603,\"y\":0,\"z\":0,\"width\":484.76821192052984,\"height\":430.7284768211921,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.Start_of_Month\"},{\"queryRef\":\"Sum(retail_sales_new.Total_Sale_Amount)\"},{\"queryRef\":\"Sum(retail_sales_new.Net_Sale_Amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"retail_sales_new\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Start_of_Month\"},\"Name\":\"Calendar.Start_of_Month\",\"NativeReferenceName\":\"Start_of_Month\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Total_Sale_Amount\"}},\"Function\":0},\"Name\":\"Sum(retail_sales_new.Total_Sale_Amount)\",\"NativeReferenceName\":\"Sum of Total_Sale_Amount\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Net_Sale_Amount\"}},\"Function\":0},\"Name\":\"Sum(retail_sales_new.Net_Sale_Amount)\",\"NativeReferenceName\":\"Sum of Net_Sale_Amount\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 430.73,
+          "width": 484.77,
+          "x": 9.54,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e79e8c02cb8489c28adb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.536423841059603,\"y\":440.26490066225165,\"z\":1000,\"width\":948.8741721854304,\"height\":251.12582781456953,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Start_of_Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(retail_sales_new.Net_Sale_Amount)\"},{\"queryRef\":\"Sum(returns_data.Return_Amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"retail_sales_new\",\"Type\":0},{\"Name\":\"r1\",\"Entity\":\"returns_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Start_of_Month\"},\"Name\":\"Calendar.Start_of_Month\",\"NativeReferenceName\":\"Start_of_Month\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Net_Sale_Amount\"}},\"Function\":0},\"Name\":\"Sum(retail_sales_new.Net_Sale_Amount)\",\"NativeReferenceName\":\"Sum of Net_Sale_Amount\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r1\"}},\"Property\":\"Return_Amount\"}},\"Function\":0},\"Name\":\"Sum(returns_data.Return_Amount)\",\"NativeReferenceName\":\"Sum of Return_Amount\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Start_of_Month\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 251.13,
+          "width": 948.87,
+          "x": 9.54,
+          "y": 440.26,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+table cus_return2
+	lineageTag: cb4124ca-bbdd-4733-b7df-08d915091542
+
+	column Transaction_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 11a17d9d-a733-4d49-9d4a-0063b49d9547
+		summarizeBy: count
+		sourceColumn: Transaction_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cus_return2 = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({retail_sales_new, dim_returns}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Transaction_ID"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
